@@ -20,6 +20,7 @@ body {
     display: inline-block;
     cursor: pointer;
     position: relative;
+    margin: 1rem;
 
     &::before {
         content: '';
@@ -46,8 +47,9 @@ body {
     height: 90vh;
     width: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     pointer-events: none;
     overflow: hidden;
 }
@@ -97,8 +99,15 @@ body {
 .title {
     color: white;
     position: relative;
-    font-size: 9rem;
+    font-size: 10rem;
     text-shadow: 4px 3px 3px $chromaticAberrationColor1, 1px -4px 3px $chromaticAberrationColor2, -4px 0px 3px $chromaticAberrationColor3;
+}
+
+p {
+    color: white;
+    opacity: 0.3;
+    font-size: 1.5rem;
+    font-style: italic;
 }
 
 #switch:checked ~ .container > .title {
