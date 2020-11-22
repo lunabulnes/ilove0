@@ -1,0 +1,66 @@
+body {
+    background: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;}
+
+.title {
+    color: white;
+    font-size: 9rem;
+    animation: glitch 5s 5s infinite;
+}
+
+.title::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-shadow: -0.5rem 0 magenta;
+    animation: glitch 5s 5.05s infinite, noise-before 5s linear alternate-reverse infinite;
+}
+
+.title::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-shadow: 0.5rem 0 cyan;
+    animation: glitch 5s 5s infinite, noise-after 5s linear alternate-reverse infinite;
+}
+
+@keyframes glitch {
+    1%{
+        transform: rotateX(10deg) skewX(90deg);
+    }
+    2%{
+        transform: rotateX(0deg) skewX(0deg);
+    }
+}
+
+@keyframes noise-before {
+    $steps: 30;
+    @for $i from 1 through $steps {
+        #{percentage($i*(1/$steps))} {
+            $top: random(20);
+            $bottom: random(21 - $top);
+            clip-path: inset(#{$top}rem 0 #{$bottom}rem 0);
+        }
+    }
+}
+
+@keyframes noise-after {
+    $steps: 30;
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            $top: random(20);
+            $bottom: random(21 - $top);
+            clip-path: inset(#{$top}rem 0 #{$bottom}rem 0);
+        }
+    }
+}
