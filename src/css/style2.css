@@ -79,7 +79,7 @@ body {
   text-shadow: 4px 3px 3px red, 1px -4px 3px blue, -4px 0px 3px green; }
 
 #switch:checked ~ .container > .title {
-  animation: chromaticMove 4s ease infinite, glitch 5s 5s infinite, glitch2 7s infinite; }
+  animation: chromaticMove 4s ease infinite, glitchSkew 5s 5s infinite, glitchMove 7s infinite, glitchCrop 11s infinite; }
 
 .screen {
   position: absolute;
@@ -104,57 +104,13 @@ body {
   100% {
     text-shadow: 4px 3px 3px red, 1px -4px 3px blue, -4px 0px 3px green; } }
 
-@keyframes flicker {
-  0% {
-    opacity: 0.3174; }
-  5% {
-    opacity: 0.79142; }
-  10% {
-    opacity: 0.00969; }
-  15% {
-    opacity: 0.56478; }
-  20% {
-    opacity: 0.20459; }
-  25% {
-    opacity: 0.35661; }
-  30% {
-    opacity: 0.29281; }
-  35% {
-    opacity: 0.67538; }
-  40% {
-    opacity: 0.04062; }
-  45% {
-    opacity: 0.99909; }
-  50% {
-    opacity: 0.14653; }
-  55% {
-    opacity: 0.88364; }
-  60% {
-    opacity: 0.11836; }
-  65% {
-    opacity: 0.71873; }
-  70% {
-    opacity: 0.24887; }
-  75% {
-    opacity: 0.44611; }
-  80% {
-    opacity: 0.78907; }
-  85% {
-    opacity: 0.42637; }
-  90% {
-    opacity: 0.60618; }
-  95% {
-    opacity: 0.53953; }
-  100% {
-    opacity: 0.49662; } }
-
-@keyframes glitch {
+@keyframes glitchSkew {
   1% {
     transform: rotateX(10deg) skewX(90deg); }
   2% {
     transform: rotateX(0deg) skewX(0deg); } }
 
-@keyframes glitch2 {
+@keyframes glitchMove {
   35% {
     top: 0;
     left: 0; }
@@ -167,6 +123,60 @@ body {
   36% {
     top: 0;
     left: 0; } }
+
+@keyframes glitchCrop {
+  13% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+  13.5% {
+    clip-path: polygon(0 0, 0 44%, 100% 9%); }
+  14% {
+    clip-path: polygon(0 47%, 0 68%, 100% 68%); }
+  14.5% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); } }
+
+@keyframes flicker {
+  0% {
+    opacity: 0.77831; }
+  5% {
+    opacity: 0.36142; }
+  10% {
+    opacity: 0.67582; }
+  15% {
+    opacity: 0.85701; }
+  20% {
+    opacity: 0.08442; }
+  25% {
+    opacity: 0.65919; }
+  30% {
+    opacity: 0.89533; }
+  35% {
+    opacity: 0.09362; }
+  40% {
+    opacity: 0.28062; }
+  45% {
+    opacity: 0.71628; }
+  50% {
+    opacity: 0.20384; }
+  55% {
+    opacity: 0.80001; }
+  60% {
+    opacity: 0.53358; }
+  65% {
+    opacity: 0.35806; }
+  70% {
+    opacity: 0.3621; }
+  75% {
+    opacity: 0.92726; }
+  80% {
+    opacity: 0.67185; }
+  85% {
+    opacity: 0.26321; }
+  90% {
+    opacity: 0.49429; }
+  95% {
+    opacity: 0.40021; }
+  100% {
+    opacity: 0.12368; } }
 
 @keyframes turn-on {
   0% {

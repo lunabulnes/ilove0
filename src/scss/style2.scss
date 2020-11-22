@@ -102,7 +102,7 @@ body {
 }
 
 #switch:checked ~ .container > .title {
-    animation: chromaticMove 4s ease infinite, glitch 5s 5s infinite, glitch2 7s infinite;
+    animation: chromaticMove 4s ease infinite, glitchSkew 5s 5s infinite, glitchMove 7s infinite, glitchCrop 11s infinite;
 }
 
 .screen {
@@ -135,16 +135,7 @@ body {
     }
 }
 
-@keyframes flicker {
-    $steps: 20;
-    @for $i from 0 through $steps {
-        #{percentage($i*(1/$steps))} {
-            opacity: random();
-        }
-    }
-}
-
-@keyframes glitch {
+@keyframes glitchSkew {
     1%{
         transform: rotateX(10deg) skewX(90deg);
     }
@@ -153,7 +144,7 @@ body {
     }
 }
 
-@keyframes glitch2 {
+@keyframes glitchMove {
     35% {
         top: 0;
         left: 0;
@@ -169,6 +160,30 @@ body {
     36% {
         top: 0;
         left: 0;
+    }
+}
+
+@keyframes glitchCrop {
+    13% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    13.5% {
+        clip-path: polygon(0 0, 0 44%, 100% 9%);
+    }
+    14% {
+        clip-path: polygon(0 47%, 0 68%, 100% 68%);
+    }
+    14.5% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+}
+
+@keyframes flicker {
+    $steps: 20;
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            opacity: random();
+        }
     }
 }
 
