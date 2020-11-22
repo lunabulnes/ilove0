@@ -93,12 +93,22 @@ body {
   opacity: 0; }
 
 #switch:checked ~ .screen {
-  animation: turn-on-screen 4s linear; }
-
-#switch:checked ~ .container {
-  animation: turn-on-content 4s linear;
+  animation: turn-on-screen 4s linear;
   animation-fill-mode: forwards; }
 
+#switch ~ .screen {
+  animation: turn-off 200ms linear;
+  animation-fill-mode: forwards; }
+
+/*#switch ~ .container {
+    animation: turn-off 200ms linear;
+    animation-fill-mode: forwards;
+}
+
+#switch:checked ~ .container {
+    animation: turn-on-content 4s linear;
+    animation-fill-mode: forwards;
+}*/
 @keyframes chromaticMove {
   0% {
     text-shadow: 4px 3px 3px red, 0px -4px 3px blue, 0px 0px -3px green; }
@@ -141,47 +151,47 @@ body {
 
 @keyframes flicker {
   0% {
-    opacity: 0.71217; }
+    opacity: 0.99013; }
   5% {
-    opacity: 0.79246; }
+    opacity: 0.68454; }
   10% {
-    opacity: 0.61529; }
+    opacity: 0.53558; }
   15% {
-    opacity: 0.32457; }
+    opacity: 0.68123; }
   20% {
-    opacity: 0.21057; }
+    opacity: 0.15386; }
   25% {
-    opacity: 0.74552; }
+    opacity: 0.00672; }
   30% {
-    opacity: 0.03373; }
+    opacity: 0.90382; }
   35% {
-    opacity: 0.06842; }
+    opacity: 0.37605; }
   40% {
-    opacity: 0.83945; }
+    opacity: 0.95172; }
   45% {
-    opacity: 0.90184; }
+    opacity: 0.04504; }
   50% {
-    opacity: 0.18442; }
+    opacity: 0.95477; }
   55% {
-    opacity: 0.53464; }
+    opacity: 0.72511; }
   60% {
-    opacity: 0.36315; }
+    opacity: 0.39183; }
   65% {
-    opacity: 0.07698; }
+    opacity: 0.40036; }
   70% {
-    opacity: 0.95224; }
+    opacity: 0.15272; }
   75% {
-    opacity: 0.59324; }
+    opacity: 0.55333; }
   80% {
-    opacity: 0.99219; }
+    opacity: 0.79386; }
   85% {
-    opacity: 0.56512; }
+    opacity: 0.63297; }
   90% {
-    opacity: 0.28395; }
+    opacity: 0.66838; }
   95% {
-    opacity: 0.87415; }
+    opacity: 0.97612; }
   100% {
-    opacity: 0.90798; } }
+    opacity: 0.5383; } }
 
 @keyframes turn-on-screen {
   0% {
@@ -211,3 +221,18 @@ body {
     opacity: 0; }
   50% {
     opacity: 1; } }
+
+@keyframes turn-off {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 0.3; }
+  60% {
+    clip-path: polygon(0 40%, 100% 40%, 100% 60%, 0 60%);
+    opacity: 0.5; }
+  80% {
+    clip-path: polygon(0 48%, 100% 48%, 100% 52%, 0 52%);
+    opacity: 1; }
+  99.9% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 50.5%, 0 50.5%); }
+  100% {
+    opacity: 0; } }
