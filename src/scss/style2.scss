@@ -35,12 +35,12 @@ body {
     }
 }
 
-#switch:checked + .switch-label {
+#switch:checked ~ .switch-label {
     background-color: green;
 }
 
-#switch:checked + .switch-label:before {
-    transform: translateX(2rem);
+#switch:checked ~ .switch-label:before {
+    transform: translateX(1rem);
 }
 
 .container {

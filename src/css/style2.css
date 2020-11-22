@@ -24,11 +24,11 @@ body {
     border-radius: 50%;
     box-shadow: inset 0px 0px 0px 1px black; }
 
-#switch:checked + .switch-label {
+#switch:checked ~ .switch-label {
   background-color: green; }
 
-#switch:checked + .switch-label:before {
-  transform: translateX(2rem); }
+#switch:checked ~ .switch-label:before {
+  transform: translateX(1rem); }
 
 .container {
   height: 90vh;
@@ -106,47 +106,47 @@ body {
 
 @keyframes flicker {
   0% {
-    opacity: 0.78647; }
+    opacity: 0.3174; }
   5% {
-    opacity: 0.49222; }
+    opacity: 0.79142; }
   10% {
-    opacity: 0.59055; }
+    opacity: 0.00969; }
   15% {
-    opacity: 0.77967; }
+    opacity: 0.56478; }
   20% {
-    opacity: 0.90862; }
+    opacity: 0.20459; }
   25% {
-    opacity: 0.84787; }
+    opacity: 0.35661; }
   30% {
-    opacity: 0.15509; }
+    opacity: 0.29281; }
   35% {
-    opacity: 0.68548; }
+    opacity: 0.67538; }
   40% {
-    opacity: 0.14762; }
+    opacity: 0.04062; }
   45% {
-    opacity: 0.23984; }
+    opacity: 0.99909; }
   50% {
-    opacity: 0.09113; }
+    opacity: 0.14653; }
   55% {
-    opacity: 0.49405; }
+    opacity: 0.88364; }
   60% {
-    opacity: 0.06093; }
+    opacity: 0.11836; }
   65% {
-    opacity: 0.29587; }
+    opacity: 0.71873; }
   70% {
-    opacity: 0.27339; }
+    opacity: 0.24887; }
   75% {
-    opacity: 0.63802; }
+    opacity: 0.44611; }
   80% {
-    opacity: 0.04966; }
+    opacity: 0.78907; }
   85% {
-    opacity: 0.90965; }
+    opacity: 0.42637; }
   90% {
-    opacity: 0.42832; }
+    opacity: 0.60618; }
   95% {
-    opacity: 0.10438; }
+    opacity: 0.53953; }
   100% {
-    opacity: 0.51589; } }
+    opacity: 0.49662; } }
 
 @keyframes glitch {
   1% {
