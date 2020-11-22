@@ -1,0 +1,38 @@
+$chromaticAberrationColor1: red;
+$chromaticAberrationColor2: blue;
+$chromaticAberrationColor3: green;
+
+
+body {
+    background: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;}
+
+.title {
+    color: white;
+    font-size: 9rem;
+    text-shadow: 5px 3px 3px $chromaticAberrationColor1, 1px -5px 3px $chromaticAberrationColor2, -5px 0px 3px $chromaticAberrationColor3;
+    animation: chromaticMove 4s ease infinite;
+}
+
+@keyframes chromaticMove {
+    0% {
+        text-shadow: 5px 3px 3px $chromaticAberrationColor1, 0px -5px 3px $chromaticAberrationColor2, 0px 0px -3px $chromaticAberrationColor3;
+    }
+    50% {
+        text-shadow: 3px 3px 1px $chromaticAberrationColor1, 0px -5px 3px $chromaticAberrationColor2, -5px 3px 4px $chromaticAberrationColor3;
+    }
+    75% {
+        text-shadow: -2px 1px 0px $chromaticAberrationColor1, 0px 5px 3px $chromaticAberrationColor2, 3px -2px 3px $chromaticAberrationColor3;
+    }
+    100% {
+        text-shadow: 5px 3px 3px $chromaticAberrationColor1, 1px -5px 3px $chromaticAberrationColor2, -5px 0px 3px $chromaticAberrationColor3;
+    }
+}
