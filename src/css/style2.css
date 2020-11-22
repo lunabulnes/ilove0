@@ -45,7 +45,8 @@ body {
   width: 100%;
   top: 0;
   left: 0;
-  pointer-events: none; }
+  pointer-events: none;
+  opacity: 0; }
   .overlay::after {
     content: "";
     position: absolute;
@@ -68,14 +69,16 @@ body {
     background: linear-gradient(rgba(128, 128, 128, 0) 50%, rgba(103, 103, 103, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 128, 0, 0.02), rgba(0, 0, 255, 0.06));
     background-size: 100% 2px, 3px 100%; }
 
-#switch:checked + .overlay {
-  opacity: 0; }
+#switch:checked ~ .overlay {
+  opacity: 1; }
 
 .title {
   color: white;
   position: relative;
   font-size: 9rem;
-  text-shadow: 4px 3px 3px red, 1px -4px 3px blue, -4px 0px 3px green;
+  text-shadow: 4px 3px 3px red, 1px -4px 3px blue, -4px 0px 3px green; }
+
+#switch:checked ~ .container > .title {
   animation: chromaticMove 4s ease infinite, glitch 5s 5s infinite, glitch2 7s infinite; }
 
 .screen {
@@ -103,47 +106,47 @@ body {
 
 @keyframes flicker {
   0% {
-    opacity: 0.93886; }
+    opacity: 0.78647; }
   5% {
-    opacity: 0.44806; }
+    opacity: 0.49222; }
   10% {
-    opacity: 0.35844; }
+    opacity: 0.59055; }
   15% {
-    opacity: 0.81117; }
+    opacity: 0.77967; }
   20% {
-    opacity: 0.07173; }
+    opacity: 0.90862; }
   25% {
-    opacity: 0.5595; }
+    opacity: 0.84787; }
   30% {
-    opacity: 0.13851; }
+    opacity: 0.15509; }
   35% {
-    opacity: 0.26802; }
+    opacity: 0.68548; }
   40% {
-    opacity: 0.08301; }
+    opacity: 0.14762; }
   45% {
-    opacity: 0.15431; }
+    opacity: 0.23984; }
   50% {
-    opacity: 0.68584; }
+    opacity: 0.09113; }
   55% {
-    opacity: 0.02145; }
+    opacity: 0.49405; }
   60% {
-    opacity: 0.07135; }
+    opacity: 0.06093; }
   65% {
-    opacity: 0.26131; }
+    opacity: 0.29587; }
   70% {
-    opacity: 0.16253; }
+    opacity: 0.27339; }
   75% {
-    opacity: 0.49683; }
+    opacity: 0.63802; }
   80% {
-    opacity: 0.78338; }
+    opacity: 0.04966; }
   85% {
-    opacity: 0.33733; }
+    opacity: 0.90965; }
   90% {
-    opacity: 0.70989; }
+    opacity: 0.42832; }
   95% {
-    opacity: 0.90296; }
+    opacity: 0.10438; }
   100% {
-    opacity: 0.39553; } }
+    opacity: 0.51589; } }
 
 @keyframes glitch {
   1% {

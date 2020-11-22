@@ -60,6 +60,7 @@ body {
     top: 0;
     left: 0;
     pointer-events: none;
+    opacity:0;
 
     &::after {
         content: "";
@@ -89,8 +90,8 @@ body {
     }
 }
 
-#switch:checked + .overlay {
-    opacity:0;
+#switch:checked ~ .overlay {
+    opacity:1;
 }
 
 .title {
@@ -98,6 +99,9 @@ body {
     position: relative;
     font-size: 9rem;
     text-shadow: 4px 3px 3px $chromaticAberrationColor1, 1px -4px 3px $chromaticAberrationColor2, -4px 0px 3px $chromaticAberrationColor3;
+}
+
+#switch:checked ~ .container > .title {
     animation: chromaticMove 4s ease infinite, glitch 5s 5s infinite, glitch2 7s infinite;
 }
 
