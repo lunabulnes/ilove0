@@ -147,47 +147,47 @@ p {
 
 @keyframes flicker {
   0% {
-    opacity: 0.50857; }
+    opacity: 0.05626; }
   5% {
-    opacity: 0.61358; }
+    opacity: 0.87151; }
   10% {
-    opacity: 0.06905; }
+    opacity: 0.44047; }
   15% {
-    opacity: 0.87957; }
+    opacity: 0.02824; }
   20% {
-    opacity: 0.07524; }
+    opacity: 0.52166; }
   25% {
-    opacity: 0.01902; }
+    opacity: 0.78857; }
   30% {
-    opacity: 0.32684; }
+    opacity: 0.38172; }
   35% {
-    opacity: 0.63347; }
+    opacity: 0.63752; }
   40% {
-    opacity: 0.50023; }
+    opacity: 0.91572; }
   45% {
-    opacity: 0.36019; }
+    opacity: 0.50343; }
   50% {
-    opacity: 0.89796; }
+    opacity: 0.03251; }
   55% {
-    opacity: 0.49248; }
+    opacity: 0.32358; }
   60% {
-    opacity: 0.39805; }
+    opacity: 0.47471; }
   65% {
-    opacity: 0.43961; }
+    opacity: 0.91877; }
   70% {
-    opacity: 0.71012; }
+    opacity: 0.57721; }
   75% {
-    opacity: 0.2128; }
+    opacity: 0.47315; }
   80% {
-    opacity: 0.29745; }
+    opacity: 0.69609; }
   85% {
-    opacity: 0.15548; }
+    opacity: 0.9982; }
   90% {
-    opacity: 0.12708; }
+    opacity: 0.55935; }
   95% {
-    opacity: 0.5282; }
+    opacity: 0.64615; }
   100% {
-    opacity: 0.59517; } }
+    opacity: 0.39468; } }
 
 @keyframes turn-on-screen {
   0% {
@@ -209,14 +209,6 @@ p {
     opacity: 0.2; }
   50% {
     opacity: 0; } }
-
-@keyframes turn-on-content {
-  0% {
-    opacity: 0; }
-  11% {
-    opacity: 0; }
-  50% {
-    opacity: 1; } }
 
 @keyframes turn-off {
   0% {

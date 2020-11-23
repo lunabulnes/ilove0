@@ -231,18 +231,6 @@ p {
     }
 }
 
-@keyframes turn-on-content {
-    0% {
-        opacity: 0;
-    }
-    11% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-}
-
 @keyframes turn-off {
     0% {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
