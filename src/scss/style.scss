@@ -66,9 +66,9 @@ body {
     overflow: hidden;
 }
 
-.overlay {
+.crt-overlay {
     z-index: 1000;
-    opacity:0;
+    opacity: 0;
 
     &::after {
         content: "";
@@ -98,7 +98,7 @@ body {
     }
 }
 
-#switch:checked ~ .overlay {
+#switch:checked ~ screen > .crt-overlay {
     opacity: 1;
 }
 
@@ -120,17 +120,17 @@ p {
     font-style: italic;
 }
 
-.screen {
+.crt-animation {
     background: white;
     opacity: 0;
 }
 
-#switch:checked ~ .screen {
+#switch:checked ~ screen > .crt-animation {
     animation: turn-on-screen 4s linear;
     animation-fill-mode: forwards;
 }
 
-#switch ~ .screen {
+#switch ~ screen > .crt-animation {
     animation: turn-off 200ms linear;
     animation-fill-mode: forwards;
 }
