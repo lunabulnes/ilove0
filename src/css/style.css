@@ -1,6 +1,7 @@
 body {
   background: black;
-  font-family: Arial, Helvetica, sans-serif; }
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 1px 1px 0px red, -1px -1px 0px green; }
 
 .cosmetic {
   pointer-events: none; }
@@ -105,6 +106,18 @@ p {
   animation: turn-off 200ms linear;
   animation-fill-mode: forwards; }
 
+.crt-message {
+  color: white;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  font-size: 60px;
+  visibility: hidden; }
+
+#switch:checked ~ screen > .crt-message {
+  animation: screen-message-animation 5s linear;
+  animation-fill-mode: forwards; }
+
 @keyframes chromaticMove {
   0% {
     text-shadow: 4px 3px 3px red, 0px -4px 3px blue, 0px 0px -3px green; }
@@ -147,47 +160,47 @@ p {
 
 @keyframes flicker {
   0% {
-    opacity: 0.11939; }
+    opacity: 0.69984; }
   5% {
-    opacity: 0.28277; }
+    opacity: 0.61751; }
   10% {
-    opacity: 0.76698; }
+    opacity: 0.08661; }
   15% {
-    opacity: 0.96859; }
+    opacity: 0.07618; }
   20% {
-    opacity: 0.77781; }
+    opacity: 0.13987; }
   25% {
-    opacity: 0.25555; }
+    opacity: 0.6378; }
   30% {
-    opacity: 0.98758; }
+    opacity: 0.66164; }
   35% {
-    opacity: 0.34537; }
+    opacity: 0.20883; }
   40% {
-    opacity: 0.45101; }
+    opacity: 0.75888; }
   45% {
-    opacity: 0.66807; }
+    opacity: 0.26591; }
   50% {
-    opacity: 0.26018; }
+    opacity: 0.76053; }
   55% {
-    opacity: 0.00695; }
+    opacity: 0.9209; }
   60% {
-    opacity: 0.52223; }
+    opacity: 0.31812; }
   65% {
-    opacity: 0.66264; }
+    opacity: 0.31522; }
   70% {
-    opacity: 0.91467; }
+    opacity: 0.75389; }
   75% {
-    opacity: 0.87318; }
+    opacity: 0.57874; }
   80% {
-    opacity: 0.71998; }
+    opacity: 0.04692; }
   85% {
-    opacity: 0.18364; }
+    opacity: 0.89821; }
   90% {
-    opacity: 0.22022; }
+    opacity: 0.73543; }
   95% {
-    opacity: 0.90426; }
+    opacity: 0.94384; }
   100% {
-    opacity: 0.72487; } }
+    opacity: 0.18123; } }
 
 @keyframes turn-on-screen {
   0% {
@@ -224,3 +237,13 @@ p {
     clip-path: polygon(0 50%, 100% 50%, 100% 50.5%, 0 50.5%); }
   100% {
     opacity: 0; } }
+
+@keyframes screen-message-animation {
+  0% {
+    visibility: hidden; }
+  20% {
+    visibility: hidden; }
+  21% {
+    visibility: visible; }
+  100% {
+    visibility: hidden; } }
