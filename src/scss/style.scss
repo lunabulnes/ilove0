@@ -8,6 +8,18 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.cosmetic {
+    pointer-events: none;
+}
+
+.full-screen {
+    position:absolute;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
 #switch {
     display: none;
 }
@@ -50,28 +62,21 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    pointer-events: none;
     overflow: hidden;
 }
 
 .overlay {
-    position:absolute;
     z-index: 1000;
-    height: 100vh;
-    width: 100%;
-    top: 0;
-    left: 0;
-    pointer-events: none;
     opacity:0;
 
     &::after {
         content: "";
-        position: absolute;
-        height: 100vh;
-        width: 100%;
-        top: 0;
-        left: 0;
-        pointer-events: none;
+        position: inherit;
+        height: inherit;
+        width: inherit;
+        top: inherit;
+        left: inherit;
+        pointer-events: inherit;
 
         background: transparentize($color: $flickerBackgroundColor, $amount: 0.9);
         opacity: 0;
@@ -80,12 +85,12 @@ body {
 
     &::before {
         content: "";
-        position: absolute;
-        height: 100vh;
-        width: 100%;
-        top: 0;
-        left: 0;
-        pointer-events: none;
+        position: inherit;
+        height: inherit;
+        width: inherit;
+        top: inherit;
+        left: inherit;
+        pointer-events: inherit;
 
         background: linear-gradient(transparentize($flickerBackgroundColor, 1) 50%, transparentize(darken($flickerBackgroundColor, 10), 0.6) 50%), linear-gradient(90deg, transparentize(red, 0.94), transparentize(green, 0.98), transparentize(blue, 0.94));
         background-size: 100% 2px, 3px 100%;
@@ -103,6 +108,10 @@ body {
     text-shadow: 4px 3px 3px $chromaticAberrationColor1, 1px -4px 3px $chromaticAberrationColor2, -4px 0px 3px $chromaticAberrationColor3;
 }
 
+.title:hover {
+    transform: scale(1.2, 1.2);
+}
+
 p {
     color: white;
     opacity: 0.3;
@@ -115,13 +124,7 @@ p {
 }
 
 .screen {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
     background: white;
-    pointer-events: none;
     opacity: 0;
 }
 
