@@ -1,6 +1,7 @@
 $chromaticAberrationColor1: red;
 $chromaticAberrationColor2: blue;
 $chromaticAberrationColor3: green;
+$fontColor: white;
 $flickerBackgroundColor: rgb(80, 80, 80);
 
 body {
@@ -102,25 +103,21 @@ body {
 }
 
 .title {
-    color: white;
+    color: $fontColor;
     position: relative;
     font-size: 10rem;
     text-shadow: 4px 3px 3px $chromaticAberrationColor1, 1px -4px 3px $chromaticAberrationColor2, -4px 0px 3px $chromaticAberrationColor3;
 }
 
-.title:hover {
-    transform: scale(1.2, 1.2);
+#switch:checked ~ .container > .title {
+    animation: chromaticMove 4s ease infinite, glitchSkew 5s 5s infinite, glitchMove 7s infinite, glitchCrop 11s infinite;
 }
 
 p {
-    color: white;
+    color: $fontColor;
     opacity: 0.3;
     font-size: 1.5rem;
     font-style: italic;
-}
-
-#switch:checked ~ .container > .title {
-    animation: chromaticMove 4s ease infinite, glitchSkew 5s 5s infinite, glitchMove 7s infinite, glitchCrop 11s infinite;
 }
 
 .screen {
@@ -137,16 +134,6 @@ p {
     animation: turn-off 200ms linear;
     animation-fill-mode: forwards;
 }
-
-/*#switch ~ .container {
-    animation: turn-off 200ms linear;
-    animation-fill-mode: forwards;
-}
-
-#switch:checked ~ .container {
-    animation: turn-on-content 4s linear;
-    animation-fill-mode: forwards;
-}*/
 
 @keyframes chromaticMove {
     0% {
