@@ -56,7 +56,7 @@ body {
     transform: translateX(1rem);
 }
 
-.container {
+container {
     height: 90vh;
     width: 100%;
     display: flex;
@@ -109,7 +109,7 @@ body {
     text-shadow: 4px 3px 3px $chromaticAberrationColor1, 1px -4px 3px $chromaticAberrationColor2, -4px 0px 3px $chromaticAberrationColor3;
 }
 
-#switch:checked ~ .container > .title {
+#switch:checked ~ container > .title {
     animation: chromaticMove 4s ease infinite, glitchSkew 5s 5s infinite, glitchMove 7s infinite, glitchCrop 11s infinite;
 }
 

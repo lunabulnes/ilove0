@@ -41,7 +41,7 @@ body {
 #switch:checked ~ .switch-label:before {
   transform: translateX(1rem); }
 
-.container {
+container {
   height: 90vh;
   width: 100%;
   display: flex;
@@ -84,7 +84,7 @@ body {
   font-size: 10rem;
   text-shadow: 4px 3px 3px red, 1px -4px 3px blue, -4px 0px 3px green; }
 
-#switch:checked ~ .container > .title {
+#switch:checked ~ container > .title {
   animation: chromaticMove 4s ease infinite, glitchSkew 5s 5s infinite, glitchMove 7s infinite, glitchCrop 11s infinite; }
 
 p {
@@ -147,47 +147,47 @@ p {
 
 @keyframes flicker {
   0% {
-    opacity: 0.05626; }
+    opacity: 0.11939; }
   5% {
-    opacity: 0.87151; }
+    opacity: 0.28277; }
   10% {
-    opacity: 0.44047; }
+    opacity: 0.76698; }
   15% {
-    opacity: 0.02824; }
+    opacity: 0.96859; }
   20% {
-    opacity: 0.52166; }
+    opacity: 0.77781; }
   25% {
-    opacity: 0.78857; }
+    opacity: 0.25555; }
   30% {
-    opacity: 0.38172; }
+    opacity: 0.98758; }
   35% {
-    opacity: 0.63752; }
+    opacity: 0.34537; }
   40% {
-    opacity: 0.91572; }
+    opacity: 0.45101; }
   45% {
-    opacity: 0.50343; }
+    opacity: 0.66807; }
   50% {
-    opacity: 0.03251; }
+    opacity: 0.26018; }
   55% {
-    opacity: 0.32358; }
+    opacity: 0.00695; }
   60% {
-    opacity: 0.47471; }
+    opacity: 0.52223; }
   65% {
-    opacity: 0.91877; }
+    opacity: 0.66264; }
   70% {
-    opacity: 0.57721; }
+    opacity: 0.91467; }
   75% {
-    opacity: 0.47315; }
+    opacity: 0.87318; }
   80% {
-    opacity: 0.69609; }
+    opacity: 0.71998; }
   85% {
-    opacity: 0.9982; }
+    opacity: 0.18364; }
   90% {
-    opacity: 0.55935; }
+    opacity: 0.22022; }
   95% {
-    opacity: 0.64615; }
+    opacity: 0.90426; }
   100% {
-    opacity: 0.39468; } }
+    opacity: 0.72487; } }
 
 @keyframes turn-on-screen {
   0% {
