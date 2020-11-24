@@ -8,39 +8,13 @@ body {
 
 .full-screen {
   position: absolute;
-  height: 100vh;
+  height: 85vh;
   width: 100%;
   top: 0;
   left: 0; }
 
 #switch {
   display: none; }
-
-.switch-label {
-  background-color: red;
-  width: 3rem;
-  height: 2rem;
-  border-radius: 2rem;
-  display: inline-block;
-  cursor: pointer;
-  position: relative;
-  margin: 1rem; }
-  .switch-label::before {
-    content: '';
-    transition: .2s;
-    display: block;
-    position: absolute;
-    width: 2rem;
-    height: 2rem;
-    background-color: white;
-    border-radius: 50%;
-    box-shadow: inset 0px 0px 0px 1px black; }
-
-#switch:checked ~ .switch-label {
-  background-color: green; }
-
-#switch:checked ~ .switch-label:before {
-  transform: translateX(1rem); }
 
 container {
   height: 90vh;
@@ -83,7 +57,7 @@ container {
   color: white;
   position: relative;
   font-size: 10rem;
-  text-shadow: 4px 3px 3px red, 1px -4px 3px blue, -4px 0px 3px green; }
+  text-shadow: 3px 3px 3px red, 1px -3px 3px blue, -3px 0px 3px green; }
 
 #switch:checked ~ container > .title {
   animation: chromaticMove 4s ease infinite, glitchSkew 5s 5s infinite, glitchMove 7s infinite, glitchCrop 11s infinite; }
@@ -120,13 +94,13 @@ p {
 
 @keyframes chromaticMove {
   0% {
-    text-shadow: 4px 3px 3px red, 0px -4px 3px blue, 0px 0px -3px green; }
+    text-shadow: 3px 3px 3px red, 0px -2px 3px blue, 0px 0px -3px green; }
   50% {
-    text-shadow: 3px 3px 1px red, 0px -4px 3px blue, -4px 3px 4px green; }
+    text-shadow: 3px 3px 1px red, 0px -3px 3px blue, -3px 2px 3px green; }
   75% {
-    text-shadow: -2px 1px 0px red, 0px 4px 3px blue, 3px -2px 3px green; }
+    text-shadow: -2px 1px 0px red, 0px 1px 3px blue, 3px -2px 3px green; }
   100% {
-    text-shadow: 4px 3px 3px red, 1px -4px 3px blue, -4px 0px 3px green; } }
+    text-shadow: 3px 3px 2px red, 1px -3px 3px blue, -3px 0px 3px green; } }
 
 @keyframes glitchSkew {
   1% {
@@ -160,47 +134,47 @@ p {
 
 @keyframes flicker {
   0% {
-    opacity: 0.69984; }
+    opacity: 0.28399; }
   5% {
-    opacity: 0.61751; }
+    opacity: 0.84405; }
   10% {
-    opacity: 0.08661; }
+    opacity: 0.69842; }
   15% {
-    opacity: 0.07618; }
+    opacity: 0.91937; }
   20% {
-    opacity: 0.13987; }
+    opacity: 0.8555; }
   25% {
-    opacity: 0.6378; }
+    opacity: 0.00039; }
   30% {
-    opacity: 0.66164; }
+    opacity: 0.68911; }
   35% {
-    opacity: 0.20883; }
+    opacity: 0.4544; }
   40% {
-    opacity: 0.75888; }
+    opacity: 0.72083; }
   45% {
-    opacity: 0.26591; }
+    opacity: 0.79165; }
   50% {
-    opacity: 0.76053; }
+    opacity: 0.5365; }
   55% {
-    opacity: 0.9209; }
+    opacity: 0.15001; }
   60% {
-    opacity: 0.31812; }
+    opacity: 0.60206; }
   65% {
-    opacity: 0.31522; }
+    opacity: 0.22149; }
   70% {
-    opacity: 0.75389; }
+    opacity: 0.43396; }
   75% {
-    opacity: 0.57874; }
+    opacity: 0.89638; }
   80% {
-    opacity: 0.04692; }
+    opacity: 0.33318; }
   85% {
-    opacity: 0.89821; }
+    opacity: 0.28478; }
   90% {
-    opacity: 0.73543; }
+    opacity: 0.53461; }
   95% {
-    opacity: 0.94384; }
+    opacity: 0.67936; }
   100% {
-    opacity: 0.18123; } }
+    opacity: 0.99638; } }
 
 @keyframes turn-on-screen {
   0% {
@@ -247,3 +221,98 @@ p {
     visibility: visible; }
   100% {
     visibility: hidden; } }
+
+.rocker {
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  width: 7em;
+  height: 4em;
+  overflow: hidden;
+  border-bottom: 0.5em solid white; }
+  .rocker::before {
+    content: " ";
+    position: absolute;
+    top: 1em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: grey;
+    border: 0.5em solid white;
+    border-bottom: 0; }
+  .rocker input {
+    display: none; }
+
+.rocker-left, .rocker-right {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: none;
+  height: 2.5em;
+  width: 3em;
+  transition: 0.2s; }
+
+.rocker-left::before, .rocker-right::before {
+  content: "";
+  position: absolute;
+  width: 0.4em;
+  height: 2.45em;
+  bottom: -0.45em;
+  background: #949393;
+  transform: skewY(-65deg);
+  transition: 0.2s; }
+
+.rocker-left {
+  height: 2.4em;
+  width: 2.75em;
+  left: 0.85em;
+  bottom: 0.4em;
+  background: #a5a5a5;
+  color: grey;
+  transform: rotate(15deg) skewX(15deg); }
+
+.rocker-left::before {
+  left: -0.4em; }
+
+.rocker-right {
+  right: 0.5em;
+  bottom: 0;
+  background: red; }
+
+.rocker-right::before {
+  width: 0;
+  right: 0;
+  transform: skewY(65deg); }
+
+#switch:checked ~ .rocker > .rocker-left {
+  background-color: green;
+  color: white;
+  bottom: 0;
+  left: 0.5em;
+  height: 2.5em;
+  width: 3em;
+  transform: rotate(0deg) skewX(0deg); }
+
+#switch:checked ~ .rocker > .rocker-left:before {
+  left: 0em;
+  width: 0; }
+
+#switch:checked ~ .rocker > .rocker-right {
+  height: 2.4em;
+  width: 2.75em;
+  right: 0.85em;
+  bottom: 0.4em;
+  background: #a5a5a5;
+  color: grey;
+  transform: rotate(-15deg) skewX(-15deg); }
+
+#switch:checked ~ .rocker > .rocker-right:before {
+  width: 0.4em;
+  right: -0.375em;
+  background: #949393; }
