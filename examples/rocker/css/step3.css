@@ -1,0 +1,53 @@
+body {
+    background: black;
+}
+
+.rocker {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    text-align: center;
+    color: white;
+    width: 8em;
+    height: 3em;
+    border: 0.5em solid white;
+}
+
+.left, .right {
+    position: relative;
+    display: flex;
+    /** This puts the text in the center of the button **/
+    justify-content: center;
+    align-items: center;
+    /****/
+    width: 3em;
+    height: 3em;
+    background: grey;
+}
+
+.left {
+    background: green;
+    width: 4em;
+}
+
+.right {
+    color: black;
+}
+
+.left::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    width: 0em;
+    height: 3em;
+    background: rgb(78, 78, 78);
+}
+
+.right::after {
+    content: " ";
+    position: absolute;
+    right: -1em;
+    width: 1em;
+    height: 3em;
+    background: rgb(78, 78, 78);
+}

@@ -1,0 +1,20 @@
+body {
+    background: black;
+}
+
+.rocker {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    width: 8em;
+    height: 2em;
+    border: 0.5em solid white;
+}
+
+.left, .right {
+    width: 4em;
+    height: 2em;
+    background: grey;
+}
