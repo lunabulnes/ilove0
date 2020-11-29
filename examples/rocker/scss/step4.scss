@@ -1,0 +1,87 @@
+@use 'sass:math';
+
+/** Measurements **/
+$rockerTotalWidth: 7em;
+$buttonHeight: 3em;
+$buttonSideWidth: 0.5em;
+$buttonOnWidth: $rockerTotalWidth / 2;
+$buttonOffWidth: $buttonOnWidth - $buttonSideWidth;
+$buttonAngle: 15deg;
+$buttonGapHeight: math.sin($buttonAngle) * ($buttonOffWidth * math.cos($buttonAngle));
+$buttonGapOffset: $buttonGapHeight / 2;
+$buttonSideAngle: math.atan($buttonGapHeight / $buttonSideWidth);
+
+/** Colors **/
+$buttonColor: grey;
+$buttonColorLight: rgb(148, 147, 147);
+$buttonColorDark: rgb(95, 95, 95);
+$buttonOnColor: green;
+$textOnColor: white;
+$textOffColor: $buttonColorDark;
+$buttonFrameColor: white;
+
+$rockerFontFamily: Arial, Helvetica, sans-serif;
+
+body {
+    background: black;
+}
+
+.rocker {
+    display: flex;
+    font-family: $rockerFontFamily;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    width: $rockerTotalWidth;
+    height: $buttonHeight;
+    border: 0.5em solid $buttonFrameColor;
+    margin: 1em;
+}
+
+.button-half {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: $buttonOffWidth;
+    height: inherit;
+    background: $buttonColor;
+    color: $textOnColor;
+
+    &::before {
+        content: " ";
+        position: absolute;
+        height: inherit;
+        background: $buttonColorLight;
+    }
+
+    &::after {
+        content: " ";
+        position: absolute;
+        height: inherit;
+        background: $buttonColorLight;
+    }
+}
+
+.left {
+    background: $buttonOnColor;
+    width: $buttonOnWidth;
+
+    &::before {
+        left: 0;
+        width: 0;
+    }
+}
+
+.right {
+    color: $textOffColor;
+    bottom: $buttonGapOffset;
+    transform: skewY(-$buttonAngle);
+
+    &::after {
+        right: -$buttonSideWidth;
+        width: $buttonSideWidth;
+        bottom: -$buttonGapOffset;
+        transform: skewY($buttonSideAngle);
+    }
+}

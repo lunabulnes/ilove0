@@ -1,20 +1,24 @@
 body {
   background: black;
   font-family: Arial, Helvetica, sans-serif;
-  text-shadow: 1px 1px 0px red, -1px -1px 0px green; }
+  text-shadow: 1px 1px 0px red, -1px -1px 0px green;
+}
 
 .cosmetic {
-  pointer-events: none; }
+  pointer-events: none;
+}
 
 .full-screen {
   position: absolute;
   height: 85vh;
   width: 100%;
   top: 0;
-  left: 0; }
+  left: 0;
+}
 
 #switch {
-  display: none; }
+  display: none;
+}
 
 container {
   height: 90vh;
@@ -23,62 +27,73 @@ container {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .crt-overlay {
   z-index: 1000;
-  opacity: 0; }
-  .crt-overlay::after {
-    content: "";
-    position: inherit;
-    height: inherit;
-    width: inherit;
-    top: inherit;
-    left: inherit;
-    pointer-events: inherit;
-    background: rgba(80, 80, 80, 0.1);
-    opacity: 0;
-    animation: flicker 0.15s infinite; }
-  .crt-overlay::before {
-    content: "";
-    position: inherit;
-    height: inherit;
-    width: inherit;
-    top: inherit;
-    left: inherit;
-    pointer-events: inherit;
-    background: linear-gradient(rgba(80, 80, 80, 0) 50%, rgba(55, 55, 55, 0.4) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 128, 0, 0.02), rgba(0, 0, 255, 0.06));
-    background-size: 100% 2px, 3px 100%; }
+  opacity: 0;
+}
+.crt-overlay::after {
+  content: "";
+  position: inherit;
+  height: inherit;
+  width: inherit;
+  top: inherit;
+  left: inherit;
+  pointer-events: inherit;
+  background: rgba(80, 80, 80, 0.1);
+  opacity: 0;
+  animation: flicker 0.15s infinite;
+}
+.crt-overlay::before {
+  content: "";
+  position: inherit;
+  height: inherit;
+  width: inherit;
+  top: inherit;
+  left: inherit;
+  pointer-events: inherit;
+  background: linear-gradient(rgba(80, 80, 80, 0) 50%, rgba(55, 55, 55, 0.4) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 128, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 2px, 3px 100%;
+}
 
 #switch:checked ~ screen > .crt-overlay {
-  opacity: 1; }
+  opacity: 1;
+}
 
 .title {
   color: white;
   position: relative;
   font-size: 10rem;
-  text-shadow: 3px 3px 3px red, 1px -3px 3px blue, -3px 0px 3px green; }
+  text-shadow: 3px 3px 3px red, 1px -3px 3px blue, -3px 0px 3px green;
+}
 
 #switch:checked ~ container > .title {
-  animation: chromaticMove 4s ease infinite, glitchSkew 5s 5s infinite, glitchMove 7s infinite, glitchCrop 11s infinite; }
+  animation: chromaticMove 4s ease infinite, glitchSkew 5s 5s infinite, glitchMove 7s infinite, glitchCrop 11s infinite;
+}
 
 p {
   color: white;
   opacity: 0.3;
   font-size: 1.5rem;
-  font-style: italic; }
+  font-style: italic;
+}
 
 .crt-animation {
   background: white;
-  opacity: 0; }
+  opacity: 0;
+}
 
 #switch:checked ~ screen > .crt-animation {
   animation: turn-on-screen 4s linear;
-  animation-fill-mode: forwards; }
+  animation-fill-mode: forwards;
+}
 
 #switch ~ screen > .crt-animation {
   animation: turn-off 200ms linear;
-  animation-fill-mode: forwards; }
+  animation-fill-mode: forwards;
+}
 
 .crt-message {
   color: white;
@@ -86,142 +101,195 @@ p {
   right: 2rem;
   top: 2rem;
   font-size: 60px;
-  visibility: hidden; }
+  visibility: hidden;
+}
 
 #switch:checked ~ screen > .crt-message {
   animation: screen-message-animation 5s linear;
-  animation-fill-mode: forwards; }
+  animation-fill-mode: forwards;
+}
 
 @keyframes chromaticMove {
   0% {
-    text-shadow: 3px 3px 3px red, 0px -2px 3px blue, 0px 0px -3px green; }
+    text-shadow: 3px 3px 3px red, 0px -2px 3px blue, 0px 0px -3px green;
+  }
   50% {
-    text-shadow: 3px 3px 1px red, 0px -3px 3px blue, -3px 2px 3px green; }
+    text-shadow: 3px 3px 1px red, 0px -3px 3px blue, -3px 2px 3px green;
+  }
   75% {
-    text-shadow: -2px 1px 0px red, 0px 1px 3px blue, 3px -2px 3px green; }
+    text-shadow: -2px 1px 0px red, 0px 1px 3px blue, 3px -2px 3px green;
+  }
   100% {
-    text-shadow: 3px 3px 2px red, 1px -3px 3px blue, -3px 0px 3px green; } }
-
+    text-shadow: 3px 3px 2px red, 1px -3px 3px blue, -3px 0px 3px green;
+  }
+}
 @keyframes glitchSkew {
   1% {
-    transform: rotateX(10deg) skewX(90deg); }
+    transform: rotateX(10deg) skewX(90deg);
+  }
   2% {
-    transform: rotateX(0deg) skewX(0deg); } }
-
+    transform: rotateX(0deg) skewX(0deg);
+  }
+}
 @keyframes glitchMove {
   35% {
     top: 0;
-    left: 0; }
+    left: 0;
+  }
   35.1% {
     top: -2rem;
-    left: -10rem; }
+    left: -10rem;
+  }
   35.5% {
     top: 5rem;
-    left: 10rem; }
+    left: 10rem;
+  }
   36% {
     top: 0;
-    left: 0; } }
-
+    left: 0;
+  }
+}
 @keyframes glitchCrop {
   13% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); }
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
   13.5% {
-    clip-path: polygon(0 0, 0 44%, 100% 9%); }
+    clip-path: polygon(0 0, 0 44%, 100% 9%);
+  }
   14% {
-    clip-path: polygon(0 47%, 0 68%, 100% 68%); }
+    clip-path: polygon(0 47%, 0 68%, 100% 68%);
+  }
   14.5% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); } }
-
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
 @keyframes flicker {
   0% {
-    opacity: 0.28399; }
+    opacity: 0.258804626;
+  }
   5% {
-    opacity: 0.84405; }
+    opacity: 0.5971418005;
+  }
   10% {
-    opacity: 0.69842; }
+    opacity: 0.351911668;
+  }
   15% {
-    opacity: 0.91937; }
+    opacity: 0.4423861721;
+  }
   20% {
-    opacity: 0.8555; }
+    opacity: 0.7725836455;
+  }
   25% {
-    opacity: 0.00039; }
+    opacity: 0.0200502658;
+  }
   30% {
-    opacity: 0.68911; }
+    opacity: 0.061347508;
+  }
   35% {
-    opacity: 0.4544; }
+    opacity: 0.1559716492;
+  }
   40% {
-    opacity: 0.72083; }
+    opacity: 0.0483254269;
+  }
   45% {
-    opacity: 0.79165; }
+    opacity: 0.6760546329;
+  }
   50% {
-    opacity: 0.5365; }
+    opacity: 0.4420396925;
+  }
   55% {
-    opacity: 0.15001; }
+    opacity: 0.3812754193;
+  }
   60% {
-    opacity: 0.60206; }
+    opacity: 0.6582527191;
+  }
   65% {
-    opacity: 0.22149; }
+    opacity: 0.5389799079;
+  }
   70% {
-    opacity: 0.43396; }
+    opacity: 0.795957815;
+  }
   75% {
-    opacity: 0.89638; }
+    opacity: 0.534832859;
+  }
   80% {
-    opacity: 0.33318; }
+    opacity: 0.0012328219;
+  }
   85% {
-    opacity: 0.28478; }
+    opacity: 0.1712558615;
+  }
   90% {
-    opacity: 0.53461; }
+    opacity: 0.2873141899;
+  }
   95% {
-    opacity: 0.67936; }
+    opacity: 0.1677328421;
+  }
   100% {
-    opacity: 0.99638; } }
-
+    opacity: 0.5312513232;
+  }
+}
 @keyframes turn-on-screen {
   0% {
     clip-path: polygon(0 20%, 100% 20%, 100% 80%, 0 80%);
-    opacity: 1; }
+    opacity: 1;
+  }
   3.5% {
     clip-path: polygon(0 40%, 100% 40%, 100% 100%, 0 100%);
-    opacity: 0; }
+    opacity: 0;
+  }
   3.6% {
     clip-path: polygon(0 0, 100% 0, 100% 60%, 0 60%);
-    opacity: 1; }
+    opacity: 1;
+  }
   3.7% {
     clip-path: polygon(0 40%, 100% 40%, 100% 60%, 0 60%);
-    opacity: 0.5; }
+    opacity: 0.5;
+  }
   9% {
-    opacity: 0; }
+    opacity: 0;
+  }
   11% {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    opacity: 0.2; }
+    opacity: 0.2;
+  }
   50% {
-    opacity: 0; } }
-
+    opacity: 0;
+  }
+}
 @keyframes turn-off {
   0% {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    opacity: 0.3; }
+    opacity: 0.3;
+  }
   60% {
     clip-path: polygon(0 40%, 100% 40%, 100% 60%, 0 60%);
-    opacity: 0.5; }
+    opacity: 0.5;
+  }
   80% {
     clip-path: polygon(0 48%, 100% 48%, 100% 52%, 0 52%);
-    opacity: 1; }
+    opacity: 1;
+  }
   99.9% {
-    clip-path: polygon(0 50%, 100% 50%, 100% 50.5%, 0 50.5%); }
+    clip-path: polygon(0 50%, 100% 50%, 100% 50.5%, 0 50.5%);
+  }
   100% {
-    opacity: 0; } }
-
+    opacity: 0;
+  }
+}
 @keyframes screen-message-animation {
   0% {
-    visibility: hidden; }
+    visibility: hidden;
+  }
   20% {
-    visibility: hidden; }
+    visibility: hidden;
+  }
   21% {
-    visibility: visible; }
+    visibility: visible;
+  }
   100% {
-    visibility: hidden; } }
-
+    visibility: hidden;
+  }
+}
 .rocker {
   display: inline-block;
   position: absolute;
@@ -232,19 +300,19 @@ p {
   width: 7em;
   height: 4em;
   overflow: hidden;
-  border-bottom: 0.5em solid white; }
-  .rocker::before {
-    content: " ";
-    position: absolute;
-    top: 1em;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: grey;
-    border: 0.5em solid white;
-    border-bottom: 0; }
-  .rocker input {
-    display: none; }
+  border-bottom: 0.5em solid white;
+}
+.rocker::before {
+  content: " ";
+  position: absolute;
+  top: 1em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: grey;
+  border: 0.5em solid white;
+  border-bottom: 0;
+}
 
 .rocker-left, .rocker-right {
   cursor: pointer;
@@ -256,7 +324,8 @@ p {
   text-shadow: none;
   height: 2.5em;
   width: 3em;
-  transition: 0.2s; }
+  transition: 0.2s;
+}
 
 .rocker-left::before, .rocker-right::before {
   content: "";
@@ -266,7 +335,8 @@ p {
   bottom: -0.45em;
   background: #949393;
   transform: skewY(-65deg);
-  transition: 0.2s; }
+  transition: 0.2s;
+}
 
 .rocker-left {
   height: 2.4em;
@@ -275,20 +345,24 @@ p {
   bottom: 0.4em;
   background: #a5a5a5;
   color: grey;
-  transform: rotate(15deg) skewX(15deg); }
+  transform: rotate(15deg) skewX(15deg);
+}
 
 .rocker-left::before {
-  left: -0.4em; }
+  left: -0.4em;
+}
 
 .rocker-right {
   right: 0.5em;
   bottom: 0;
-  background: red; }
+  background: red;
+}
 
 .rocker-right::before {
   width: 0;
   right: 0;
-  transform: skewY(65deg); }
+  transform: skewY(65deg);
+}
 
 #switch:checked ~ .rocker > .rocker-left {
   background-color: green;
@@ -297,11 +371,13 @@ p {
   left: 0.5em;
   height: 2.5em;
   width: 3em;
-  transform: rotate(0deg) skewX(0deg); }
+  transform: rotate(0deg) skewX(0deg);
+}
 
 #switch:checked ~ .rocker > .rocker-left:before {
   left: 0em;
-  width: 0; }
+  width: 0;
+}
 
 #switch:checked ~ .rocker > .rocker-right {
   height: 2.4em;
@@ -310,9 +386,13 @@ p {
   bottom: 0.4em;
   background: #a5a5a5;
   color: grey;
-  transform: rotate(-15deg) skewX(-15deg); }
+  transform: rotate(-15deg) skewX(-15deg);
+}
 
 #switch:checked ~ .rocker > .rocker-right:before {
   width: 0.4em;
   right: -0.375em;
-  background: #949393; }
+  background: #949393;
+}
+
+/*# sourceMappingURL=style.css.map */

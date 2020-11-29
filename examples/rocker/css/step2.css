@@ -1,45 +1,53 @@
+/** Measurements **/
+/** Colors **/
 body {
-    background: black;
+  background: black;
 }
 
 .rocker {
-    display: flex;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 2em;
-    color: white;
-    text-align: center;
-    width: 8em;
-    height: 2em;
-    border: 0.5em solid white;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  text-align: center;
+  font-weight: bold;
+  width: 7em;
+  height: 3em;
+  border: 0.5em solid white;
+  margin: 1em;
 }
 
-.left, .right {
-    position: relative;
-    display: flex;
-    /** This puts the text in the center of the button **/
-    justify-content: center;
-    align-items: center;
-    /****/
-    left: 1em;
-    width: 3em;
-    height: 2em;
-    background: grey;
+.button-half {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 3em;
+  height: inherit;
+  left: 0.5em;
+  background: grey;
+  color: white;
+}
+.button-half::before {
+  content: " ";
+  position: absolute;
+  height: inherit;
+  background: #949393;
+}
+.button-half::after {
+  content: " ";
+  position: absolute;
+  height: inherit;
+  background: #949393;
 }
 
 .left::before {
-    content: " ";
-    position: absolute;
-    left: -1em;
-    width: 1em;
-    height: 2em;
-    background: rgb(78, 78, 78);
+  left: -0.5em;
+  width: 0.5em;
 }
 
 .right::after {
-    content: " ";
-    position: absolute;
-    right: -1em;
-    width: 1em;
-    height: 2em;
-    background: rgb(78, 78, 78);
+  right: -0.5em;
+  width: 0.5em;
 }
+
+/*# sourceMappingURL=step2.css.map */

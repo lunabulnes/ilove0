@@ -1,20 +1,32 @@
+/** Measurements **/
+/** Colors **/
 body {
-    background: black;
+  background: black;
 }
 
 .rocker {
-    display: flex;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 2em;
-    color: white;
-    text-align: center;
-    width: 8em;
-    height: 2em;
-    border: 0.5em solid white;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  text-align: center;
+  font-weight: bold;
+  width: 7em;
+  height: 3em;
+  border: 0.5em solid white;
+  margin: 1em;
 }
 
-.left, .right {
-    width: 4em;
-    height: 2em;
-    background: grey;
+.button-half {
+  /** This puts the text in the center of the button **/
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  /****/
+  width: 3.5em;
+  height: inherit;
+  background: grey;
+  color: white;
 }
+
+/*# sourceMappingURL=step1.css.map */

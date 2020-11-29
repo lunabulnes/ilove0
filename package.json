@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "scss": "node-sass --watch ./src/scss -o ./src/css"
+    "scss": "sass --watch ./src/scss:./src/css",
+    "scss-rocker": "sass --watch ./examples/rocker/scss:./examples/rocker//css"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-sass": "^5.0.0"
+    "sass": "^1.29.0"
   }
 }

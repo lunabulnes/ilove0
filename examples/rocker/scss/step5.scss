@@ -1,0 +1,141 @@
+@use 'sass:math';
+
+/** Measurements **/
+$rockerTotalWidth: 7em;
+$buttonHeight: 3em;
+$buttonSideWidth: 0.5em;
+$buttonOnWidth: $rockerTotalWidth / 2;
+$buttonOffWidth: $buttonOnWidth - $buttonSideWidth;
+$buttonAngle: 15deg;
+$buttonGapHeight: math.sin($buttonAngle) * ($buttonOffWidth * math.cos($buttonAngle));
+$buttonGapOffset: $buttonGapHeight / 2;
+$buttonSideAngle: math.atan($buttonGapHeight / $buttonSideWidth);
+
+/** Colors **/
+$buttonColor: grey;
+$buttonColorLight: rgb(148, 147, 147);
+$buttonColorDark: rgb(95, 95, 95);
+$buttonOnColor: green;
+$buttonOffColor: red;
+$textOnColor: white;
+$textOffColor: $buttonColorDark;
+$buttonFrameColor: white;
+
+$rockerFontFamily: Arial, Helvetica, sans-serif;
+
+body {
+    background: black;
+}
+
+.test {
+    width: $buttonGapHeight;
+    height: $buttonGapHeight;
+}
+
+#rocker-state {
+    display: none;
+}
+
+.rocker {
+    display: flex;
+    font-family: $rockerFontFamily;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    width: $rockerTotalWidth;
+    height: $buttonHeight;
+    border: 0.5em solid $buttonFrameColor;
+    background: $buttonColorDark;
+    margin: 1em;
+}
+
+.button-half {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    color: $textOffColor;
+    transition: 0.2s;
+
+    &::before {
+        content: " ";
+        position: absolute;
+        height: inherit;
+        transition: 0.2s;
+    }
+
+    &::after {
+        content: " ";
+        position: absolute;
+        height: inherit;
+        transition: 0.2s;
+    }
+}
+
+.left {
+    background: $buttonColor;
+    width: $buttonOffWidth;
+    bottom: $buttonGapOffset;
+    left: $buttonSideWidth;
+    transform: skewY($buttonAngle);
+
+    &::before {
+        left: -$buttonSideWidth;
+        bottom: -$buttonGapOffset;
+        width: $buttonSideWidth;
+        background: $buttonColorLight;
+        transform: skewY(-$buttonSideAngle);
+    }
+}
+
+.right {
+    color: $textOnColor;
+    width: $buttonOnWidth;
+    left: $buttonSideWidth;
+    bottom: 0;
+    background: $buttonOffColor;
+    transform: skewY(0deg);
+
+    &::after {
+        background: $buttonColorLight;
+        width: 0;
+        bottom: 0;
+        right: 0;
+        transform: skewY(0);
+    }
+}
+
+#rocker-state:checked {
+    ~ .rocker > .left {
+        color: $textOnColor;
+        width: $buttonOnWidth;
+        background: $buttonOnColor;
+        bottom: 0;
+        left: 0;
+        transform: skewY(0deg);
+
+        &::before {
+            left: 0;
+            width: 0;
+            bottom: 0;
+            transform: skewY(0);
+        }
+    }
+
+    ~ .rocker > .right {
+        color: $textOffColor;
+        background: $buttonColor;
+        left: 0;
+        bottom: $buttonGapOffset;
+        width: $buttonOffWidth;
+        transform: skewY(-$buttonAngle);
+
+        &::after {
+            width: $buttonSideWidth;
+            right: -$buttonSideWidth;
+            bottom: -$buttonGapOffset;
+            transform: skewY($buttonSideAngle);
+        }
+    }
+}

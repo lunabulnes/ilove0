@@ -1,0 +1,65 @@
+/** Measurements **/
+$rockerTotalWidth: 7em;
+$buttonHeight: 3em;
+$buttonSideWidth: 0.5em;
+$buttonWidth: $rockerTotalWidth / 2 - $buttonSideWidth;
+
+/** Colors **/
+$buttonColor: grey;
+$buttonColorLight: rgb(148, 147, 147);
+$textColor: white;
+$buttonFrameColor: white;
+
+$rockerFontFamily: Arial, Helvetica, sans-serif;
+
+body {
+    background: black;
+}
+
+.rocker {
+    display: flex;
+    font-family: $rockerFontFamily;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    width: $rockerTotalWidth;
+    height: $buttonHeight;
+    border: 0.5em solid $buttonFrameColor;
+    margin: 1em;
+}
+
+.button-half {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: $buttonWidth;
+    height: inherit;
+    left: $buttonSideWidth;
+    background: $buttonColor;
+    color: $textColor;
+
+    &::before {
+        content: " ";
+        position: absolute;
+        height: inherit;
+        background: $buttonColorLight;
+    }
+
+    &::after {
+        content: " ";
+        position: absolute;
+        height: inherit;
+        background: $buttonColorLight;
+    }
+}
+
+.left::before {
+    left: -$buttonSideWidth;
+    width: $buttonSideWidth;
+}
+
+.right::after {
+    right: -$buttonSideWidth;
+    width: $buttonSideWidth;
+}

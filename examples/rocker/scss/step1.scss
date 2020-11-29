@@ -1,0 +1,40 @@
+/** Measurements **/
+$rockerTotalWidth: 7em;
+$buttonHeight: 3em;
+$buttonWidth: $rockerTotalWidth / 2;
+
+/** Colors **/
+$buttonColor: grey;
+$textColor: white;
+$buttonFrameColor: white;
+
+$rockerFontFamily: Arial, Helvetica, sans-serif;
+
+body {
+    background: black;
+}
+
+.rocker {
+    display: flex;
+    font-family: $rockerFontFamily;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    width: $rockerTotalWidth;
+    height: $buttonHeight;
+    border: 0.5em solid $buttonFrameColor;
+    margin: 1em;
+}
+
+.button-half {
+    /** This puts the text in the center of the button **/
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    /****/
+    width: $buttonWidth;
+    height: inherit;
+    background: $buttonColor;
+    color: $textColor;
+}
