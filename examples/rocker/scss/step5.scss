@@ -7,7 +7,7 @@ $buttonSideWidth: 0.5em;
 $buttonOnWidth: $rockerTotalWidth / 2;
 $buttonOffWidth: $buttonOnWidth - $buttonSideWidth;
 $buttonAngle: 15deg;
-$buttonGapHeight: math.sin($buttonAngle) * ($buttonOffWidth * math.cos($buttonAngle));
+$buttonGapHeight: math.sin($buttonAngle) * ($buttonOffWidth / math.cos($buttonAngle));
 $buttonGapOffset: $buttonGapHeight / 2;
 $buttonSideAngle: math.atan($buttonGapHeight / $buttonSideWidth);
 
@@ -25,11 +25,6 @@ $rockerFontFamily: Arial, Helvetica, sans-serif;
 
 body {
     background: black;
-}
-
-.test {
-    width: $buttonGapHeight;
-    height: $buttonGapHeight;
 }
 
 #rocker-state {
@@ -62,14 +57,14 @@ body {
         content: " ";
         position: absolute;
         height: inherit;
-        transition: 0.2s;
+        transition: inherit;
     }
 
     &::after {
         content: " ";
         position: absolute;
         height: inherit;
-        transition: 0.2s;
+        transition: inherit;
     }
 }
 
